@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import clienteAxios from '../config/axios'
 import { formatearDinero } from "../helpers"
+import Spinner from "../components/Spinner"
 import useQuiosco from "../hooks/useQuiosco"
 
 export default function RenovacionStock() {
@@ -20,7 +21,7 @@ export default function RenovacionStock() {
         
 
 
-    if(isLoading) return 'Cargando...'
+    if(isLoading) return <Spinner />
     return (
         <div>
             <h1 className="text-4xl font-black">Actualizacion de disponibilidad</h1>

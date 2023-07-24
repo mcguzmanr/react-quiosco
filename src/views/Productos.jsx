@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import clienteAxios from '../config/axios'
 import Producto from '../components/Producto'
+import Spinner from "../components/Spinner"
 
 export default function Productos() {
 
@@ -13,7 +14,7 @@ export default function Productos() {
 
     const { data, error, isLoading } = useSWR('/api/productos', fetcher, {refreshInterval: 10000})
 
-    if(isLoading) return 'Cargando...'
+    if(isLoading) return <Spinner />
 
 
 

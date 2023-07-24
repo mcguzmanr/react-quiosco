@@ -1,6 +1,7 @@
 export const formatearDinero = cantidad => {
-    return cantidad.toLocaleString('en-US', {
+    return new Intl.NumberFormat("en-US",{
         style: 'currency',
-        currency: 'USD'
-    })
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    }).format(cantidad)
 }

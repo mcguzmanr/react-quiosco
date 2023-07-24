@@ -59,10 +59,10 @@ export const useAuth = ({middleware, url}) => {
         if(middleware === 'guest' && url && user) {
             navigate(url)
         }
-        if(middleware === 'guest' && user && user.admin){
+        if(middleware === 'guest' && user && (user.admin == 1)){
             navigate('/admin')
         }
-        if(middleware === 'admin' && user && !user.admin){
+        if(middleware === 'admin' && user && (user.admin == 0)){
             navigate('/')
         }
         if(middleware === 'auth' && error){
