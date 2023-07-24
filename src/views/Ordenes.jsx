@@ -2,6 +2,7 @@ import useSWR from 'swr'
 import useQuiosco from '../hooks/useQuiosco'
 import clienteAxios from '../config/axios'
 import { formatearDinero } from '../helpers'
+import Spinner from "../components/Spinner"
 
 export default function Ordenes() {
   const token = localStorage.getItem('AUTH_TOKEN')
@@ -16,7 +17,7 @@ export default function Ordenes() {
   const {handleClickCompletarPedido} = useQuiosco()
 
 
-    if(isLoading) return 'Cargando...'
+    if(isLoading) return <Spinner />
 
   return (
     <div>

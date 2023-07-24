@@ -9,6 +9,9 @@ import Ordenes from './views/Ordenes'
 import Productos from './views/Productos'
 import RenovacionStock from './views/RenovacionStock'
 
+import ErrorInicio from './components/ErrorInicio'
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -16,7 +19,8 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Inicio />
+                element: <Inicio />,
+                errorElement: <ErrorInicio />
             }
         ]
     },
@@ -40,15 +44,18 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Ordenes />
+                element: <Ordenes />,
+                errorElement: <ErrorInicio />
             },
             {
                 path: '/admin/productos',
-                element: <Productos />
+                element: <Productos />,
+                errorElement: <ErrorInicio />
             },
             {
                 path: '/admin/productos/stock',
-                element: <RenovacionStock />
+                element: <RenovacionStock />,
+                errorElement: <ErrorInicio />
             }
         ]
     }

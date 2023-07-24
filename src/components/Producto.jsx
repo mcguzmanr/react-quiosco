@@ -1,4 +1,4 @@
-import { formatearDinero } from "../helpers"
+import { formatearDinero } from "../helpers/index.js"
 import useQuiosco from "../hooks/useQuiosco"
 
 export default function Producto({producto, botonAgregar = false, botonDisponible = false}) {
